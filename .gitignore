@@ -70,9 +70,10 @@ instance/
 
 # Sphinx documentation
 docs/_build/
-
+test.py
 # PyBuilder
 target/
+cookie*.json
 
 # Jupyter Notebook
 .ipynb_checkpoints
