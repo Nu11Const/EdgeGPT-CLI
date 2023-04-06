@@ -76,13 +76,20 @@ async def main():
     console.print(title)
     session = create_session()
     import os
-    if not(os.path.exists("cookies.json")):
-        console.print("[bold green]? [/] [green]Please input your Cookies:[/] ")
-        cookie = await get_input_async(session=session)
-        with open("cookies.json","w") as f:
-            f.write(cookie)
+    if not(os.path.exists("token.json")):
+        console.print("[bold green]? [/] [green]Please input your Token:[/] ")
+        token = await get_input_async(session=session)
+        with open("token.json","w") as f:
+            U = [
+                {
+                    "name": "_U",
+                    "value": token
+                }
+            ]
+            U_str = json.dumps(U)
+            f.write(U_str)
     global bot
-    bot = Chatbot(cookiePath='./cookies.json')
+    bot = Chatbot(cookiePath='./token.json')
     global style
     while 1:
         try:
